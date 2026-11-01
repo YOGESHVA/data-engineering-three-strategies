@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "run_id": "98dbd502-c9f9-413c-9db6-7158e199e32c",
+      "strategy": "full_refresh",
+      "status": "SUCCESS",
+      "input_count": 100000,
+      "output_count": 100000,
+      "rejected_count": 0,
+      "duration_ms": 3780.266
+    },
+    {
+      "run_id": "2139711d-5862-4282-a28a-8745b9f094df",
+      "strategy": "incremental_merge",
+      "status": "SUCCESS",
+      "input_count": 100000,
+      "output_count": 100000,
+      "rejected_count": 0,
+      "duration_ms": 2718.479
+    },
+    {
+      "run_id": "03e2ffcf-cdf1-4977-b50f-402c9be38596",
+      "strategy": "partition_replacement",
+      "status": "SUCCESS",
+      "input_count": 100000,
+      "output_count": 100000,
+      "rejected_count": 0,
+      "duration_ms": 3807.943
+    }
+  ],
+  "equivalent_results": true,
+  "row_count": 100000
+}

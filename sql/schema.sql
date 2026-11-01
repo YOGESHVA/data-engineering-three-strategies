@@ -1,0 +1,4 @@
+-- Schema is created by src/db.py.
+-- Main entities: customers (1) -> (many) source_orders.
+-- Target tables are maintained independently by the three loading strategies.
+-- pipeline_runs and rejects provide operational observability.
