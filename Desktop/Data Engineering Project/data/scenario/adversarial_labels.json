@@ -1,0 +1,33 @@
+{
+  "seed": 42,
+  "records": [
+    {
+      "source_record_number": 1,
+      "expected": "update_existing"
+    },
+    {
+      "source_record_number": 2,
+      "expected": "exact_duplicate"
+    },
+    {
+      "source_record_number": 3,
+      "expected": "conflicting_duplicate_reject"
+    },
+    {
+      "source_record_number": 4,
+      "expected": "stale_out_of_order_update"
+    },
+    {
+      "source_record_number": 5,
+      "expected": "late_arrival_insert"
+    },
+    {
+      "source_record_number": 6,
+      "expected": "missing_amount_reject"
+    },
+    {
+      "source_record_number": 7,
+      "expected": "unknown_customer_reject"
+    }
+  ]
+}

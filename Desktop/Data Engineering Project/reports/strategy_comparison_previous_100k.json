@@ -1,0 +1,242 @@
+{
+  "trials": 3,
+  "timing_statistic": "median",
+  "median_duration_ms": {
+    "full_refresh": 2401.704,
+    "incremental_merge": 2722.229,
+    "partition_replacement": 2810.219
+  },
+  "comparison_passed": true,
+  "trial_results": [
+    {
+      "trial": 1,
+      "execution_success": true,
+      "data_equivalent": true,
+      "oracle_match": {
+        "full_refresh": true,
+        "incremental_merge": true,
+        "partition_replacement": true
+      },
+      "comparison_passed": true,
+      "results": {
+        "full_refresh": {
+          "run_id": "6a230d65-0c58-4cdb-88a9-4dfde43568a0",
+          "strategy": "full_refresh",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2078.21,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        },
+        "incremental_merge": {
+          "run_id": "e2c11cfd-6113-413d-96a8-e5289716a664",
+          "strategy": "incremental_merge",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2683.442,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        },
+        "partition_replacement": {
+          "run_id": "afc073a8-0d03-4f43-a699-8923e31516c9",
+          "strategy": "partition_replacement",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2743.398,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        }
+      },
+      "timings_ms": {
+        "full_refresh": 2111.492801000054,
+        "incremental_merge": 2722.2287549999464,
+        "partition_replacement": 2810.2186859999847
+      },
+      "row_count": 100000
+    },
+    {
+      "trial": 2,
+      "execution_success": true,
+      "data_equivalent": true,
+      "oracle_match": {
+        "full_refresh": true,
+        "incremental_merge": true,
+        "partition_replacement": true
+      },
+      "comparison_passed": true,
+      "results": {
+        "incremental_merge": {
+          "run_id": "2e843fee-4d86-470e-bb6e-d05ce2b03619",
+          "strategy": "incremental_merge",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2346.06,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        },
+        "partition_replacement": {
+          "run_id": "2556ec6b-3387-4471-9a70-0b51e9b0f48b",
+          "strategy": "partition_replacement",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2659.709,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        },
+        "full_refresh": {
+          "run_id": "945ddacc-b1b2-4127-8881-6f6250753741",
+          "strategy": "full_refresh",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2419.674,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        }
+      },
+      "timings_ms": {
+        "incremental_merge": 2384.4824180000614,
+        "partition_replacement": 2734.4362830000364,
+        "full_refresh": 2459.626569999955
+      },
+      "row_count": 100000
+    },
+    {
+      "trial": 3,
+      "execution_success": true,
+      "data_equivalent": true,
+      "oracle_match": {
+        "full_refresh": true,
+        "incremental_merge": true,
+        "partition_replacement": true
+      },
+      "comparison_passed": true,
+      "results": {
+        "partition_replacement": {
+          "run_id": "2b0e3779-3ad5-4d24-8dc4-ea90a2c57b45",
+          "strategy": "partition_replacement",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2877.242,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        },
+        "full_refresh": {
+          "run_id": "80e9ef44-16f0-4cd4-b7ab-39b2fa1bb880",
+          "strategy": "full_refresh",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 2365.493,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        },
+        "incremental_merge": {
+          "run_id": "b08761c0-8de4-431e-8045-a709e5630a18",
+          "strategy": "incremental_merge",
+          "status": "SUCCESS",
+          "input_count": 100000,
+          "source_records": 100000,
+          "accepted_count": 100000,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 100000,
+          "updated_count": 0,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 100000,
+          "duration_ms": 3010.841,
+          "source_sha256": "2a655bc694b74c9545a0431329eb3c1b33e29ba523174c6b99f46c7a9931d010"
+        }
+      },
+      "timings_ms": {
+        "partition_replacement": 2963.4406449999915,
+        "full_refresh": 2401.704228999961,
+        "incremental_merge": 3057.181304000096
+      },
+      "row_count": 100000
+    }
+  ],
+  "workload": "single supplied CSV; initial load; SQLite local benchmark",
+  "limitations": "This benchmark measures the supplied initial-load workload. Use a separately prepared base/delta/complete-partition scenario to compare later-batch workloads."
+}

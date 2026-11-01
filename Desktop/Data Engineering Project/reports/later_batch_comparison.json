@@ -1,0 +1,314 @@
+{
+  "workload": "later batch: full final snapshot vs incremental delta vs complete affected partitions",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "manifest": {
+    "seed": 42,
+    "base_records": 1000,
+    "update_records": 50,
+    "insert_records": 50,
+    "delta_records": 100,
+    "affected_partitions": [
+      "2026-01-01",
+      "2026-01-02"
+    ],
+    "partition_snapshot_records": 250,
+    "expected_final_records": 1050,
+    "contract": "incremental input is updates+inserts; partition input is a complete snapshot of every affected date"
+  },
+  "trials": 3,
+  "trial_order": "rotated/alternated by trial",
+  "expected_amount_total_cents": 260910172,
+  "median_duration_ms": {
+    "full_refresh": 38.635,
+    "incremental_merge": 6.39,
+    "partition_replacement": 12.124
+  },
+  "comparison_passed": true,
+  "trial_results": [
+    {
+      "trial": 1,
+      "execution_success": true,
+      "oracle_match": {
+        "full_refresh": false,
+        "incremental_merge": false,
+        "partition_replacement": false
+      },
+      "oracle_checks": {
+        "full_refresh": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        },
+        "incremental_merge": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        },
+        "partition_replacement": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        }
+      },
+      "comparison_passed": true,
+      "duration_ms": {
+        "full_refresh": 39.31564599997728,
+        "incremental_merge": 6.221152999842161,
+        "partition_replacement": 11.863220000122965
+      },
+      "results": {
+        "full_refresh": {
+          "run_id": "a8230d6e-d9fe-4db5-90a9-b38e7cddc5e2",
+          "strategy": "full_refresh",
+          "status": "SUCCESS",
+          "input_count": 1050,
+          "source_records": 1050,
+          "accepted_count": 1050,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 1050,
+          "updated_count": 0,
+          "deleted_count": 1000,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 32.871,
+          "source_sha256": "9db476e59740d9c9d4b916369b0c09ee17181fdcde6c77617e43fd2ddf686c08"
+        },
+        "incremental_merge": {
+          "run_id": "f3b6df5e-d1a2-4ffa-a759-fafeb19f7c9f",
+          "strategy": "incremental_merge",
+          "status": "SUCCESS",
+          "input_count": 100,
+          "source_records": 100,
+          "accepted_count": 100,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 50,
+          "updated_count": 50,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 3.342,
+          "source_sha256": "5b77768616596a791cebee2e1bb28ba17360d7942a97e473390f9263918e899c"
+        },
+        "partition_replacement": {
+          "run_id": "cafdf47b-d873-4956-b781-d52b2071b458",
+          "strategy": "partition_replacement",
+          "status": "SUCCESS",
+          "input_count": 250,
+          "source_records": 250,
+          "accepted_count": 250,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 250,
+          "updated_count": 0,
+          "deleted_count": 200,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 8.502,
+          "source_sha256": "14d74418ee6e3daf501d6fccf66101cecf7d7f456ca5cb268fb09cac474228b2"
+        }
+      }
+    },
+    {
+      "trial": 2,
+      "execution_success": true,
+      "oracle_match": {
+        "full_refresh": false,
+        "incremental_merge": false,
+        "partition_replacement": false
+      },
+      "oracle_checks": {
+        "full_refresh": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        },
+        "incremental_merge": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        },
+        "partition_replacement": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        }
+      },
+      "comparison_passed": true,
+      "duration_ms": {
+        "incremental_merge": 6.389947999878132,
+        "partition_replacement": 12.250986000026387,
+        "full_refresh": 36.503852000123516
+      },
+      "results": {
+        "incremental_merge": {
+          "run_id": "aa9e3415-b7db-4eb6-96ad-a0a8acbf5da3",
+          "strategy": "incremental_merge",
+          "status": "SUCCESS",
+          "input_count": 100,
+          "source_records": 100,
+          "accepted_count": 100,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 50,
+          "updated_count": 50,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 3.257,
+          "source_sha256": "5b77768616596a791cebee2e1bb28ba17360d7942a97e473390f9263918e899c"
+        },
+        "partition_replacement": {
+          "run_id": "c3cb99f7-0719-420f-96c8-ac7e97af91e4",
+          "strategy": "partition_replacement",
+          "status": "SUCCESS",
+          "input_count": 250,
+          "source_records": 250,
+          "accepted_count": 250,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 250,
+          "updated_count": 0,
+          "deleted_count": 200,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 8.645,
+          "source_sha256": "14d74418ee6e3daf501d6fccf66101cecf7d7f456ca5cb268fb09cac474228b2"
+        },
+        "full_refresh": {
+          "run_id": "182ca98b-3ab6-4768-9a3d-45e12c621aaf",
+          "strategy": "full_refresh",
+          "status": "SUCCESS",
+          "input_count": 1050,
+          "source_records": 1050,
+          "accepted_count": 1050,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 1050,
+          "updated_count": 0,
+          "deleted_count": 1000,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 32.312,
+          "source_sha256": "9db476e59740d9c9d4b916369b0c09ee17181fdcde6c77617e43fd2ddf686c08"
+        }
+      }
+    },
+    {
+      "trial": 3,
+      "execution_success": true,
+      "oracle_match": {
+        "full_refresh": false,
+        "incremental_merge": false,
+        "partition_replacement": false
+      },
+      "oracle_checks": {
+        "full_refresh": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        },
+        "incremental_merge": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        },
+        "partition_replacement": {
+          "row_count": 1050,
+          "key_set_match": true,
+          "amount_total_cents": 260910172,
+          "amount_total_cents_match": true
+        }
+      },
+      "comparison_passed": true,
+      "duration_ms": {
+        "partition_replacement": 12.124154000048293,
+        "full_refresh": 38.63515600005485,
+        "incremental_merge": 6.465942999966501
+      },
+      "results": {
+        "partition_replacement": {
+          "run_id": "530d89e4-ee54-4bcf-885f-56fee158c9c7",
+          "strategy": "partition_replacement",
+          "status": "SUCCESS",
+          "input_count": 250,
+          "source_records": 250,
+          "accepted_count": 250,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 250,
+          "updated_count": 0,
+          "deleted_count": 200,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 8.65,
+          "source_sha256": "14d74418ee6e3daf501d6fccf66101cecf7d7f456ca5cb268fb09cac474228b2"
+        },
+        "full_refresh": {
+          "run_id": "784be628-5dd3-46f2-b638-af8d2046f8e1",
+          "strategy": "full_refresh",
+          "status": "SUCCESS",
+          "input_count": 1050,
+          "source_records": 1050,
+          "accepted_count": 1050,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 1050,
+          "updated_count": 0,
+          "deleted_count": 1000,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 34.706,
+          "source_sha256": "9db476e59740d9c9d4b916369b0c09ee17181fdcde6c77617e43fd2ddf686c08"
+        },
+        "incremental_merge": {
+          "run_id": "11c2a47f-8381-470c-bc58-0e5a7136836b",
+          "strategy": "incremental_merge",
+          "status": "SUCCESS",
+          "input_count": 100,
+          "source_records": 100,
+          "accepted_count": 100,
+          "duplicate_count": 0,
+          "rejected_count": 0,
+          "stale_count": 0,
+          "unchanged_count": 0,
+          "inserted_count": 50,
+          "updated_count": 50,
+          "deleted_count": 0,
+          "ignored_scope_count": 0,
+          "output_count": 1050,
+          "duration_ms": 3.55,
+          "source_sha256": "5b77768616596a791cebee2e1bb28ba17360d7942a97e473390f9263918e899c"
+        }
+      }
+    }
+  ]
+}

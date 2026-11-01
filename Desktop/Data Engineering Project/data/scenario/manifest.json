@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "base_records": 1000,
+  "update_records": 50,
+  "insert_records": 50,
+  "delta_records": 100,
+  "affected_partitions": [
+    "2026-01-01",
+    "2026-01-02"
+  ],
+  "partition_snapshot_records": 250,
+  "expected_final_records": 1050,
+  "contract": "incremental input is updates+inserts; partition input is a complete snapshot of every affected date"
+}

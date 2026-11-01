@@ -1,0 +1,4 @@
+order_id,order_date,customer_id,amount,status,updated_at
+101,2026-10-30,1,500,NEW,2026-10-30T09:00:00Z
+102,2026-10-30,2,800,PAID,2026-10-30T09:05:00Z
+103,2026-10-31,3,300,NEW,2026-10-31T09:00:00Z
